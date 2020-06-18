@@ -10,6 +10,7 @@ public class CheckIfAbleToTakeCourseFunction {
 	// BFS approach, using queue, fast solution since we use array of arraylist to keep track of adjacent vertex from each course
 	public boolean canFinish(int numCourses, int[][] prerequisites) {
 		int[] visited = new int[numCourses];
+		
 		List<Integer>[] adj = new ArrayList[numCourses];
 
 		for (int i = 0; i < adj.length; i++) {
@@ -17,9 +18,10 @@ public class CheckIfAbleToTakeCourseFunction {
 		}
 
 		for (int[] edge : prerequisites) {
-			// For every course, store any course that could be taken
+			// For every prereq course, store any course that could be taken
 			adj[edge[1]].add(edge[0]);
 
+			// Mark the course as need to take a prereq first
 			visited[edge[0]]++;
 		}
 
