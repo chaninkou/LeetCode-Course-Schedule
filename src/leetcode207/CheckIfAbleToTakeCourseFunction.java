@@ -17,8 +17,8 @@ public class CheckIfAbleToTakeCourseFunction {
 			adj[i] = new ArrayList<>();
 		}
 
+		// For every prereq course, store any course that could be taken
 		for (int[] edge : prerequisites) {
-			// For every prereq course, store any course that could be taken
 			adj[edge[1]].add(edge[0]);
 
 			// Mark the course as need to take a prereq first
